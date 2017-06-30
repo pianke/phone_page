@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Document</title>
+	<style>
+		* {
+			-ms-touch-select: none;
+			-webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    -webkit-user-select: none;
+		    outline: 0;
+		}
+		html {
+			width: 100%;
+			height: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: arial;
+			font-size:16px;
+			color: #6c6c6c;
+			-webkit-touch-callout:none;
+			-webkit-tap-highlight-color:rgba(0,0,0,0);
+			-webkit-text-size-adjust:none;
+			background: #F5F5F5;
+		}
+		header {
+			width: 100%;
+			height: 44px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			font-size: 20px;
+			text-align: center;
+			line-height: 44px;
+			background: #FFF;
+			z-index: 9;
+			border-bottom: 1px solid rgba(204,204,204,0.8);
+			-ms-touch-action: none;
+		}
+		input[type='text'],
+		input[type='password'],
+		input[type='number'] {
+		    line-height: 21px;
+		    width: 100%;
+		    height: 40px;
+		    margin-bottom: 15px;
+		    padding: 10px 15px;
+		    -webkit-user-select: text;
+		    border: 1px solid rgba(0, 0, 0, .2);
+		    border-radius: 3px;
+		    outline: none;
+		    background-color: #fff;
+		    -webkit-appearance: none;
+		}
+		.nav_title{
+		    font-size: 14px;
+		    font-weight: bold;
+		    line-height: 44px;
+		    position: absolute;
+		    display: block;
+		    width: 100%;
+		    padding: 0;
+		    text-align: center;
+		    white-space: nowrap;
+		    color: #000;
+		    margin: 0;
+		    text-overflow: ellipsis;
+		    color:#5E5E5E;
+		}
+		.page_box{
+			margin-top: 44px;
+			overflow: hidden;			
+		}
+		.page_title{
+			margin:10px 0 0 15px;
+		}
+		.contor_mark{
+			position: relative;
+			margin-top:10px;
+			border-top: 1px solid #ECECEC;
+			background: #fff;
+		}
+		.delete_mark{
+		    position: absolute;
+		    right: 0;
+		    top: -9px;
+		    z-index: 1;
+		    height: 18px;
+		    width: 18px;
+		    background: #FD5656;
+		    color: #fff;
+		    text-align: center;
+		    line-height: 17px;
+		}
+		.input_row{
+			height: 40px;
+			clear: left;
+		    overflow: hidden;
+		    position: relative;
+		    border-bottom: 1px solid #ECECEC;
+		}
+		.input_row label{
+		    line-height: 1.1;
+		    float: left;
+		    width: 30%;
+		    padding: 12px 15px;
+		    font-size: 14px;   
+		}
+		.input_row input{
+			float: right;
+		    width: 70%;
+		    margin-bottom: 0;
+		    padding-left: 0;
+		    border: 0;
+		    padding: 10px 15px;
+		    line-height: 21px;
+		    -webkit-appearance: none;
+		}
+		.input_row .age_box{
+			float: right;
+		    width: 70%;			
+		}
+		.age_box select{
+		    -webkit-appearance: none;
+		    border: 0;
+		    outline: 0;
+		    background-color: transparent;
+		    height: 39px;
+		    line-height: 39px;
+		    position: relative;
+		    z-index: 1;
+		    left: 10px;
+		    color: #A9A9A9;
+		    width:93%;			
+		}
+		.add_people{
+		    padding: 15px 0;
+		    background: #fff;
+		    border-bottom: 1px solid #ECECEC;
+		}
+		.add_people input{
+			background: #FD5656;
+		    color: #fff;
+		    border: 0;
+		    width: 96%;
+		    font-size: 14px;
+		    font-weight: bold;
+		    height: 2em;
+		    line-height: 2em;
+		    display: inline-block;
+		    cursor: pointer;
+		    border-radius: 15px;
+		    margin: 0 2%;
+		}
+		.wTot{
+			position: absolute;
+			width:100%;
+			text-align: center;
+			bottom:80px;
+		}
+		.Tot{
+			font-size:13px;
+			background: #000;
+			opacity: 0.5;
+			padding:5px 8px;
+			border-radius: 5px;
+			color: #fff;
+		}
+
+	</style>
+</head>
+<body>
+	<header class="bar_nav">
+	    <h1 class="nav_title">我要报名</h1>
+	</header>
+	<div class="page_box">
+		<div>
+			<p class="page_title">参与人</p>
+			<div id="addList">	
+				<div class="contor_mark" id="addMan">				
+					<div class="input_row">
+						<label>手机号</label>
+				        <input type="text" placeholder="请输入手机号">
+					</div>
+					<div class="input_row">
+						<label>年&nbsp;&nbsp;&nbsp;&nbsp;龄</label>
+						<div class="age_box">
+					        <select>
+					            <option value="1周岁">1周岁</option>
+					            <option value="2周岁">2周岁</option>
+					            <option value="3周岁">3周岁</option>
+					        </select>
+				        </div>
+					</div>
+					<div class="input_row">
+						<label>性&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+						<div class="age_box">
+					        <select>
+					            <option value="男">男</option>
+					            <option value="女">女</option>
+					        </select>
+				        </div>
+					</div>	
+				</div>
+			</div>	
+			<div class="add_people">	
+				<input id="addBtn" type="button" value="添加参与人" />
+			</div>
+		</div>
+		<div>
+			<p class="page_title">监护人/联系人</p>		
+			<div class="contor_mark">
+				<div class="input_row">
+					<label>联系人手机</label>
+			        <input type="text" placeholder="请输入手机号">
+				</div>
+				<div class="input_row">
+					<label>联系人角色</label>
+					<div class="age_box">
+				        <select>
+				            <option value="妈妈">妈妈</option>
+				            <option value="爸爸">爸爸</option>
+				            <option value="奶奶/外婆">奶奶/外婆</option>
+				            <option value="爷爷/外公">爷爷/外公</option>
+				        </select>
+			        </div>
+				</div>	
+			</div>
+			<div class="add_people">	
+				<input id="Tbtn" type="button" value="提交报名信息" />
+			</div>
+		</div>		
+	</div>
+	<script>
+
+	var addBtn = document.getElementById('addBtn');
+	var addMan = document.getElementById('addMan');
+	var addList = document.getElementById('addList');
+	var btn = document.getElementById('Tbtn');
+	var input = document.getElementsByTagName('input');
+	var bod = document.getElementsByTagName("body")[0];
+
+	if(addList.children.length == 1){
+		addBtn.parentNode.style.display = 'none';
+	}
+	input[0].oninput = function(){
+		if(input[0].value != ''){
+			addBtn.parentNode.style.display = 'block';
+		}else{
+			addBtn.parentNode.style.display = 'none';
+		}
+	}
+
+	addBtn.onclick = function(){
+		if(addList.children.length == 2){addBtn.parentNode.style.display = 'none';}
+		if(addList.children.length == 3){return;}
+		var cnt = addMan.innerHTML;
+		var Div = document.createElement('div');
+			Div.setAttribute('class','contor_mark');
+			Div.innerHTML = cnt;
+		var Spn = document.createElement('span');
+			Spn.setAttribute('class','delete_mark'); 
+			Spn.innerHTML = 'x'; 
+			Div.appendChild(Spn); 
+		addList.appendChild(Div);
+
+		Spn.onclick = function(){
+			this.parentNode.remove();
+			if(addList.children.length < 3){addBtn.parentNode.style.display = 'block';}
+		}
+	}
+
+	btn.onclick =function(){
+		for (var i = 0; i<input.length; i++){
+	 		if (input[i].getAttribute('type') == 'text') {
+	 			var phone = input[i].value;
+	 			if(typeof(phone) == "undefined" || phone == null || phone.trim() == '') {
+					show("手机号码不能为空");
+					return;
+				}
+				if(!phone.match(/^1[34578]\d{9}$/)) {
+					show("手机号码格式不正确");
+					return;
+				}
+	 		}
+    	}
+	}
+ 
+	var onoff = true;	
+	function show(contains){
+		if(!onoff){return;}
+    	if(onoff){
+    		var totDiv = document.createElement('div');
+				totDiv.setAttribute('id','showTot');
+				totDiv.setAttribute('class','wTot');
+				bod.appendChild(totDiv);			
+			var	totSpan = document.createElement('span');
+				totSpan.setAttribute('class','Tot');
+				totSpan.innerHTML = contains;
+				totDiv.appendChild(totSpan);
+			onoff = false;        		
+    	}
+    	var num = 2;
+        var timer =  setInterval(function(){
+        	num --;
+        	if(num == 0){
+        		onoff = true;
+        		showTot.remove();
+        	}
+        },500); 
+	}	
+	</script>
+</body>
+</html>
